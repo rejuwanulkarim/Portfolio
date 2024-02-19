@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* background-color: gray; */
+        }
+
+        .progressbarContainer {
+            position: relative;
+            width: 13rem;
+            height: 13rem;
+            background-image: conic-gradient(rgb(155, 144, 144) 36deg, white 0deg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 10ms all linear;
+            /* border: 1px solid rgba(128, 128, 128, 0.574); */
+            box-shadow: 0 0 33px -11px gray;
+
+        }
+
+        .progressbarContainer::after {
+            content: "";
+            background-color: white;
+            position: absolute;
+
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            z-index: 20;
+
+        }
+
+        .count {
+            z-index: 50;
+            font-size: 15px;
+        }
+    </style>
+    <div class="progressbarContainer">
+        <span class="count">0%</span>
+    </div>
+
+    <script>
+        let progressbarContainer = document.getElementsByClassName("progressbarContainer")[0]
+        let count = document.getElementsByClassName("count")[0]
+        let endat = 90,
+            startVal = 0
+        const intervalStart = setInterval(() => {
+            startVal++
+            progressbarContainer.setAttribute("style", `background-image: conic-gradient(rgb(155, 144, 144) ${startVal * 3.6}deg, white 0deg)`)
+            count.innerHTML = `${startVal}%`
+            if (startVal === endat) {
+                clearInterval(intervalStart)
+            }
+        }, 10)
+
+
+
+    </script>
+
+</body>
+
+</html>
