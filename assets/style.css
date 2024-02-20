@@ -57,6 +57,54 @@ body {
     font-weight: bold;
 }
 
+.nav-right {
+    animation: SlideSlider1 0.2s linear;
+}
+
+@keyframes SlideSlider2 {
+    from {
+        right: -6rem;
+    }
+
+    to {
+        right: -12px;
+    }
+}
+
+.SideNav {
+    background: #fba520;
+    position: fixed;
+    right: -12px;
+    top: 3rem;
+    border-radius: 55% 0 10% 18px;
+    padding: 6rem 18px 4rem 36px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    z-index: 99998;
+    animation: SlideSlider2 0.2s linear;
+    transition: 0.2s;
+}
+
+@keyframes SlideSlider2 {
+    from {
+        right: -6rem;
+    }
+
+    to {
+        right: -12px;
+    }
+}
+
+.SideNav ul {
+    list-style-type: none;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--textColor);
+    font-weight: bold;
+}
+
 .nav-li a {
     text-decoration: none;
     color: var(--textColor);
@@ -275,10 +323,7 @@ body {
     font-size: 4rem;
 }
 
-.nav-right {
-    position: fixed;
-    right: 2rem;
-}
+
 
 .about-heading span:nth-child(1) {
     color: var(--mainPointColor);
@@ -333,57 +378,81 @@ body {
     height: 100%;
 }
 
-.contact-form {
-    width: 100%;
-}
-
-.form-name {
-    /* color: var(--textColor); */
-}
-
-.form-label {
-    font-size: 1.3rem;
-    color: gold;
-}
-
-.form-input {
-    /* width: 100%; */
-    flex-grow: 1;
-    background-color: transparent;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: 2px solid red;
-    outline: none;
-    color: var(--textColor);
-    padding-left: 0.2rem;
-    /* margin-top: 1rem; */
-}
-
-.btn-submit {
-    width: 100%;
+.contactForm {
+    width: 45rem;
+    border: 2px solid #fba520;
+    padding: 23px;
+    border-radius: 18px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border: none !important;
-    /* outline: none; */
+    justify-content: center;
+    gap: 1.5rem;
 }
 
-.submit-btn {
-    cursor: pointer;
-    width: 8rem;
-    background-color: var(--mainPointColor);
-    color: gold;
-    border-radius: 20px;
-    height: 2.5rem;
-    border: none;
-}
+
 
 
 .flex {
     display: flex;
 }
 
+.formInputSection {
+    display: flex;
+    width: 100%;
+    height: 3.5rem;
+    position: relative;
+}
+
+.formInputSection input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 5;
+    outline: #fba520;
+    border: 2px solid #fba520;
+    border-radius: 10px;
+    padding: 0 10px;
+    color: #fba520;
+}
+.formInputSection textarea {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 5;
+    outline: #fba520;
+    border: 2px solid #fba520;
+    border-radius: 10px;
+    padding: 0 10px;
+    padding-top: 1rem;
+    color: #fba520;
+}
+.formInputSection input::placeholder{
+    visibility: none;
+}
+
+
+.form-label {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    z-index: 2;
+    color: #fba520;
+    top: 29%;
+    left: 6px;
+    background-color: transparent;
+    transition: 0.5s all;
+}
+
+.labelTop {
+    padding: 0 10px;
+    top: -19%;
+    z-index: 10;
+    border-radius: 6px;
+    background: #fba520;
+    color: white;
+    transition: 0.5s all;
+}
 
 /* contact section :end */
 
@@ -542,4 +611,92 @@ input[type=number] {
 .skilname {
     color: #ff0000;
     font-weight: bold;
+}
+
+
+.profileImage {
+    width: 22rem;
+    height: 20rem;
+    background: linear-gradient(rgba(248, 117, 55, 1), rgba(251, 168, 31, 1));
+    /* animation-name: BackgroundChanger; */
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border-radius: 0;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    overflow: hidden;
+    /* border-radius: 123% 54% 72% 27%; */
+    /* border-radius: 70% 88% 60% 54%;
+   
+    border-radius: 73% 118% 82% 72%; */
+    border-radius: 123% 54% 72% 27%;
+    z-index: -1;
+}
+
+@keyframes BackgroundChanger {
+    30% {}
+
+    50% {}
+
+    100% {}
+}
+
+.profileImage img {
+    /* background-blend-mode: color; */
+    float: left;
+    width: 17rem;
+    height: 20rem;
+    object-position: center;
+    object-fit: cover;
+    right: -55px;
+}
+
+#navButton {
+    display: none;
+    position: fixed;
+    top: 4rem;
+    right: 1rem;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    background-color: #fba520;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    gap: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 31px -10px red;
+    z-index: 99999;
+    animation: SlideSlider2;
+}
+
+#navButton span:first-child {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: 0.6s all;
+}
+
+#navButton span:last-child {
+    width: 90%;
+    height: 3px;
+    background-color: white;
+    transition: 0.6s all;
+}
+
+#navButton:hover span:first-child {
+    position: absolute;
+    transition: 0.6s all;
+    transform: rotate(45deg);
+    width: 72%;
+}
+
+#navButton:hover span:last-child {
+    transition: 0.6s all;
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 72%;
 }
