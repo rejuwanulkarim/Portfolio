@@ -222,7 +222,11 @@
         top: 0;
     }
     #navButton{
+        display: flex;
         top: 0.5rem !important;
 
+    }
+    .nav-left{
+        font-size: 1rem;
     }
 }
