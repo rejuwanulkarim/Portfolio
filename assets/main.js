@@ -40,24 +40,45 @@ initialSkills()
 const RightNav = document.getElementsByClassName("nav-right")[0]
 const NavBar = document.querySelectorAll(".navbar")[0]
 const OpenNavbar = () => {
-    RightNav.classList.add("SideNav")
+    if (RightNav.classList.length === 2) {
+        RightNav.classList.remove("SideNav")
+    } else if (RightNav.classList.length === 1) {
+        RightNav.classList.add("SideNav")
+    }
 }
-const CloseNavbar = () => {
-    let NavbarBound = NavBar.getBoundingClientRect()
-    RightNav.classList.remove("SideNav")
-}
+
 
 window.onscroll = () => {
-    if (NavBar.getBoundingClientRect().top <= -37) {
+    if (NavBar.getBoundingClientRect().top <= -37 && window.innerWidth >= 650) {
         navButton.setAttribute("style", "display:flex")
+    } else if (window.innerWidth >= 650) {
+        navButton.removeAttribute("style")
+        RightNav.classList.remove("SideNav")
 
+    }
+}
+window.onload = () => {
+    if (window.innerHeight <= 650) {
+        navButton.setAttribute("style", "display:flex")
+        RightNav.classList.add("SideNav")
+    } else {
+        navButton.removeAttribute("style")
+        RightNav.classList.remove("SideNav")
+
+    }
+    // console.log(window.innerWidth)
+
+}
+window.onresize = () => {
+    if (window.innerHeight <= 650) {
+        navButton.setAttribute("style", "display:flex")
+        RightNav.classList.add("SideNav")
     } else {
         navButton.removeAttribute("style")
         RightNav.classList.remove("SideNav")
 
     }
 }
-
 // label changer functions
 const InputFocus = (e) => {
     console.log(e)

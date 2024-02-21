@@ -79,7 +79,7 @@ body {
     border-radius: 55% 0 10% 18px;
     padding: 6rem 18px 4rem 36px;
     height: fit-content;
-    display: flex;
+    display: flex !important;
     align-items: center;
     z-index: 99998;
     animation: SlideSlider2 0.2s linear;
@@ -236,8 +236,7 @@ body {
 .skill-heading {
     font-size: 4rem;
     /* color: gold; */
-    width: 80%;
-    margin: auto;
+    width: 100%;
 }
 
 .skill-heading span:nth-child(1) {
@@ -415,6 +414,7 @@ body {
     padding: 0 10px;
     color: #fba520;
 }
+
 .formInputSection textarea {
     width: 100%;
     height: 100%;
@@ -427,7 +427,8 @@ body {
     padding-top: 1rem;
     color: #fba520;
 }
-.formInputSection input::placeholder{
+
+.formInputSection input::placeholder {
     visibility: none;
 }
 
@@ -452,6 +453,17 @@ body {
     background: #fba520;
     color: white;
     transition: 0.5s all;
+}
+
+.submit-btn {
+    padding: 9px 37px;
+    border-radius: 11px;
+    background: #f97f33;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 /* contact section :end */
@@ -508,10 +520,15 @@ input[type=number] {
 
 
 .copywrite {
-    position: relative;
-    bottom: 37px;
     text-align: center;
     color: gold;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f97f33;
+    color: white;
+    margin-top: 4.5rem;
 }
 
 
@@ -687,16 +704,16 @@ input[type=number] {
     transition: 0.6s all;
 }
 
-#navButton:hover span:first-child {
+/* #navButton:hover span:first-child {
     position: absolute;
     transition: 0.6s all;
     transform: rotate(45deg);
     width: 72%;
-}
+} */
 
-#navButton:hover span:last-child {
+/* #navButton:hover span:last-child {
     transition: 0.6s all;
     position: absolute;
     transform: rotate(-45deg);
     width: 72%;
-}
+} */
